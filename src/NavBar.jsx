@@ -13,9 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
 const pages = ["Home", "Nearby", "Help"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Dashboard", "Login"];
 
-const NavBar = () => {
+const NavBar = ({ handleSetModalOpen }) => {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
 	const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -101,6 +101,7 @@ const NavBar = () => {
 					<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
 						{pages.map((page) => (
 							<Button
+								href={`/${page}`}
 								key={page}
 								onClick={handleCloseNavMenu}
 								sx={{ my: 2, color: "black", display: "block" }}
@@ -134,7 +135,14 @@ const NavBar = () => {
 						>
 							{settings.map((setting) => (
 								<MenuItem key={setting} onClick={handleCloseUserMenu}>
-									<Typography textAlign="center">{setting}</Typography>
+									<Typography
+										textAlign="center"
+										onClick={() =>
+											setting === "Login" ? handleSetModalOpen(true) : null
+										}
+									>
+										{setting}
+									</Typography>
 								</MenuItem>
 							))}
 						</Menu>
