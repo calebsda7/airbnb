@@ -1,7 +1,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	font-family: "Roboto";
 }
 
@@ -35,10 +34,6 @@ header {
 	flex-shrink: 0;
 	color: rgb(52, 71, 103);
 }
-
-/* .MuiBox-root.css-1t6c9ts button:first-child {
-	border: 1px red solid !important;
-} */
 
 .css-enf76l-MuiPaper-root {
 	border-radius: 20px !important;

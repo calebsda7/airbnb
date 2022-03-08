@@ -5,13 +5,25 @@ import Container from "@mui/material/Container";
 // pages
 import Booking from "./BookingComponents/BookingPage";
 import PhotoSlide from "./PhotoSlide";
-import Login from "./LoginPage";
+import Nearby from "./NearbyPage";
 
 function Home() {
 	return (
-		<body>
+		<div>
 			<Container root maxWidth="lg" sx={{ position: "relative" }}>
-				<Grid container maxWidth justifyContent="center" spacing={2}>
+				<Grid
+					container
+					maxWidth
+					justifyContent="center"
+					spacing={2}
+					sx={{
+						height: "calc(100vh - 50px)",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						position: "relative",
+					}}
+				>
 					<Grid>
 						<Booking />
 					</Grid>
@@ -19,11 +31,11 @@ function Home() {
 						<PhotoSlide />
 					</Grid>
 				</Grid>
+				<Grid>
+					<Nearby />
+				</Grid>
 			</Container>
-			<Grid>
-				<Login />
-			</Grid>
-		</body>
+		</div>
 	);
 }
 

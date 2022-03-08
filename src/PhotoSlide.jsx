@@ -13,7 +13,7 @@ export default function PhotoSlide() {
 				position: "absolute",
 				top: 50,
 				left: "25%",
-				zIndex: "modal",
+				zIndex: "1",
 			}}
 		>
 			<ImageListItem>

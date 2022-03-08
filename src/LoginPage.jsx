@@ -18,17 +18,19 @@ const style = {
 	p: 4,
 };
 
-export default function Login({ open, onClose }) {
+export default function Login({ open, close }) {
 	const responseGoogle = (response) => {
 		console.log(response);
 		console.log(response.profileObj);
 	};
-
+	const handleClose = () => {
+		close(false);
+	};
 	return (
 		<div>
 			<Modal
 				open={open}
-				onClose={onClose}
+				onClose={handleClose}
 				aria-labelledby="modal-modal-title"
 				aria-describedby="modal-modal-description"
 			>

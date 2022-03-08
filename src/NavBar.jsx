@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { SubscriptionsOutlined } from "@mui/icons-material";
 
 const pages = ["Home", "Nearby", "Help"];
 const settings = ["Profile", "Account", "Dashboard", "Login"];
@@ -34,9 +35,14 @@ const NavBar = ({ handleSetModalOpen }) => {
 		setAnchorElUser(null);
 	};
 
+	const handleFunction = () => {
+		console.log("testing");
+		handleSetModalOpen(true);
+	};
+
 	return (
 		<AppBar
-			position="static"
+			position="relative"
 			sx={{ backgroundColor: "white", boxShadow: "none" }}
 		>
 			<Container maxWidth="xl">
@@ -137,9 +143,7 @@ const NavBar = ({ handleSetModalOpen }) => {
 								<MenuItem key={setting} onClick={handleCloseUserMenu}>
 									<Typography
 										textAlign="center"
-										onClick={() =>
-											setting === "Login" ? handleSetModalOpen(true) : null
-										}
+										onClick={setting === "Login" ? handleFunction : null}
 									>
 										{setting}
 									</Typography>

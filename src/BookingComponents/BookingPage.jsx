@@ -32,7 +32,7 @@ export default function Booking() {
 				top: 100,
 				left: "2%",
 				position: "absolute",
-				zIndex: "tooltip",
+				zIndex: 2,
 				backgroundColor: (theme) =>
 					theme.palette.mode === "dark" ? "#1A2027" : "#fff",
 			}}
