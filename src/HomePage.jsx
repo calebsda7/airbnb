@@ -6,11 +6,12 @@ import Container from "@mui/material/Container";
 import Booking from "./BookingComponents/BookingPage";
 import PhotoSlide from "./PhotoSlide";
 import Nearby from "./NearbyPage";
+import FooterPage from "./FooterPage";
 
-function Home() {
+const HomePage = () => {
 	return (
 		<div>
-			<Container maxWidth="lg" sx={{ position: "relative" }}>
+			<Container root maxWidth="lg" sx={{ position: "relative" }}>
 				<Grid
 					container
 					maxWidth
@@ -27,7 +28,7 @@ function Home() {
 					<Grid>
 						<Booking />
 					</Grid>
-					<Grid xs={6} md={4}>
+					<Grid>
 						<PhotoSlide />
 					</Grid>
 				</Grid>
@@ -35,8 +36,9 @@ function Home() {
 					<Nearby />
 				</Grid>
 			</Container>
+			<FooterPage />
 		</div>
 	);
-}
+};
 
-export default Home;
+export default HomePage;

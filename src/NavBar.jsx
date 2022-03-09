@@ -11,6 +11,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
+import Login from "./LoginPage";
 
 const pages = ["Home", "Nearby", "Help"];
 const settings = ["Profile", "Account", "Dashboard", "Login"];
@@ -18,6 +20,7 @@ const settings = ["Profile", "Account", "Dashboard", "Login"];
 const NavBar = ({ handleSetModalOpen }) => {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
 	const [anchorElUser, setAnchorElUser] = React.useState(null);
+	const [isModalOn, setModalStatus] = React.useState(false);
 
 	const handleOpenNavMenu = (event) => {
 		setAnchorElNav(event.currentTarget);
@@ -36,7 +39,8 @@ const NavBar = ({ handleSetModalOpen }) => {
 
 	const handleFunction = () => {
 		console.log("testing");
-		handleSetModalOpen(true);
+		setModalStatus(true);
+		handleCloseUserMenu();
 	};
 
 	return (
@@ -68,7 +72,6 @@ const NavBar = ({ handleSetModalOpen }) => {
 							<MenuIcon />
 						</IconButton>
 						<Menu
-							id="menu-appbar"
 							anchorEl={anchorElNav}
 							anchorOrigin={{
 								vertical: "bottom",
@@ -104,14 +107,19 @@ const NavBar = ({ handleSetModalOpen }) => {
 					</Typography>
 
 					<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-						{pages.map((page) => (
+						{pages.map((page, idx) => (
 							<Button
-								href={`/${page}`}
-								key={page}
+								key={idx}
 								onClick={handleCloseNavMenu}
 								sx={{ my: 2, color: "black", display: "block" }}
 							>
-								{page}
+								<Link
+									to={`/${page}`}
+									style={{ textDecoration: "none", color: "black" }}
+								>
+									{" "}
+									{page}
+								</Link>
 							</Button>
 						))}
 					</Box>
@@ -124,7 +132,6 @@ const NavBar = ({ handleSetModalOpen }) => {
 						</Tooltip>
 						<Menu
 							sx={{ mt: "45px" }}
-							id="menu-appbar"
 							anchorEl={anchorElUser}
 							anchorOrigin={{
 								vertical: "top",
@@ -138,14 +145,15 @@ const NavBar = ({ handleSetModalOpen }) => {
 							open={Boolean(anchorElUser)}
 							onClose={handleCloseUserMenu}
 						>
+							<Login open={isModalOn} close={setModalStatus} />
 							{settings.map((setting) => (
-								<MenuItem key={setting} onClick={handleCloseUserMenu}>
-									<Typography
-										textAlign="center"
-										onClick={setting === "Login" ? handleFunction : null}
-									>
-										{setting}
-									</Typography>
+								<MenuItem
+									key={setting}
+									onClick={
+										setting === "Login" ? handleFunction : handleCloseUserMenu
+									}
+								>
+									<Typography textAlign="center">{setting}</Typography>
 								</MenuItem>
 							))}
 						</Menu>
