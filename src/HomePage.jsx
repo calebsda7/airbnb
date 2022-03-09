@@ -10,7 +10,7 @@ import Nearby from "./NearbyPage";
 function Home() {
 	return (
 		<div>
-			<Container root maxWidth="lg" sx={{ position: "relative" }}>
+			<Container maxWidth="lg" sx={{ position: "relative" }}>
 				<Grid
 					container
 					maxWidth
@@ -27,7 +27,7 @@ function Home() {
 					<Grid>
 						<Booking />
 					</Grid>
-					<Grid Container xs={6} md={4}>
+					<Grid xs={6} md={4}>
 						<PhotoSlide />
 					</Grid>
 				</Grid>

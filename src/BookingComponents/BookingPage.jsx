@@ -1,25 +1,23 @@
 import * as React from "react";
-import SelectAdult from "./SelectAdults";
-import SelectChildren from "./SelectChildren";
-
-import { styled } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import SearchIcon from "@mui/icons-material/Search";
-import Container from "@mui/material/Container";
 
-const Item = styled(Paper)(({ theme }) => ({
-	backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-	...theme.typography.body2,
-	padding: theme.spacing(1),
-	textAlign: "center",
-	color: theme.palette.text.secondary,
-}));
+//Pages
+import SelectAdult from "./SelectAdults";
+import SelectChildren from "./SelectChildren";
+
+// const Item = styled(Paper)(({ theme }) => ({
+// 	backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+// 	...theme.typography.body2,
+// 	padding: theme.spacing(1),
+// 	textAlign: "center",
+// 	color: theme.palette.text.secondary,
+// }));
 
 export default function Booking() {
 	return (
