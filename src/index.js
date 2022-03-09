@@ -6,14 +6,12 @@ import App from "./App";
 import Home from "./HomePage";
 import Nearby from "./NearbyPage";
 import NavBar from "./NavBar";
-import Login from "./LoginPage";
 
 const rootElement = document.getElementById("root");
 
 render(
   <BrowserRouter>
     <NavBar />
-    <Login />
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/home" element={<Home />} />

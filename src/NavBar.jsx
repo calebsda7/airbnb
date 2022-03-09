@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import Login from "./LoginPage";
 
 const pages = ["Home", "Nearby", "Help"];
 const settings = ["Profile", "Account", "Dashboard", "Login"];
@@ -19,6 +20,7 @@ const settings = ["Profile", "Account", "Dashboard", "Login"];
 const NavBar = ({ handleSetModalOpen }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [isModalOn, setModalStatus] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,7 +39,7 @@ const NavBar = ({ handleSetModalOpen }) => {
 
   const handleFunction = () => {
     console.log("testing");
-    handleSetModalOpen(true);
+    setModalStatus(true);
     handleCloseUserMenu();
   };
 
@@ -143,6 +145,7 @@ const NavBar = ({ handleSetModalOpen }) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <Login open={isModalOn} close={setModalStatus} />
               {settings.map((setting) => (
                 <MenuItem
                   key={setting}
