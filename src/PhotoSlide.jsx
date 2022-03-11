@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import ImageListItem from "@mui/material/ImageListItem";
+import { Grid } from "@mui/material";
 
 export default function PhotoSlide() {
 	return (
@@ -14,13 +15,15 @@ export default function PhotoSlide() {
 				zIndex: "1",
 			}}
 		>
-			<ImageListItem>
-				<img
-					style={{ borderRadius: 10 }}
-					src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2065&q=80"
-					alt=""
-				/>
-			</ImageListItem>
+			<Grid container>
+				<ImageListItem>
+					<img
+						style={{ borderRadius: 10 }}
+						src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2065&q=80"
+						alt=""
+					/>
+				</ImageListItem>
+			</Grid>
 		</Box>
 	);
 }

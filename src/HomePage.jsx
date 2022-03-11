@@ -11,28 +11,23 @@ import FooterPage from "./FooterPage";
 const HomePage = () => {
 	return (
 		<div>
-			<Container root maxWidth="lg" sx={{ position: "relative" }}>
+			<Container maxWidth="lg" sx={{ position: "relative" }}>
 				<Grid
 					container
-					maxWidth
-					justifyContent="center"
 					spacing={2}
 					sx={{
 						height: "calc(100vh - 50px)",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
 						position: "relative",
 					}}
 				>
-					<Grid>
+					<Grid item xs={12} md={4}>
 						<Booking />
 					</Grid>
-					<Grid>
+					<Grid item xs={12} md={8}>
 						<PhotoSlide />
 					</Grid>
 				</Grid>
-				<Grid>
+				<Grid container>
 					<Nearby />
 				</Grid>
 			</Container>

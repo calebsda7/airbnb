@@ -11,14 +11,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import SelectAdult from "./SelectAdults";
 import SelectChildren from "./SelectChildren";
 
-// const Item = styled(Paper)(({ theme }) => ({
-// 	backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-// 	...theme.typography.body2,
-// 	padding: theme.spacing(1),
-// 	textAlign: "center",
-// 	color: theme.palette.text.secondary,
-// }));
-
 export default function Booking() {
 	return (
 		<Paper
@@ -36,8 +28,8 @@ export default function Booking() {
 			}}
 			elevation={6}
 		>
-			<Grid item xs={12} sm container direction="column" spacing={2}>
-				<Grid item xs>
+			<Grid container direction="column" spacing={2}>
+				<Grid item>
 					<Typography
 						gutterBottom
 						variant="subtitle1"
