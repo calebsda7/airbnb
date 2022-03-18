@@ -6,7 +6,7 @@ import App from "./App";
 import Home from "./HomePage";
 import Nearby from "./NearbyPage";
 import NavBar from "./NavBar";
-import UpdateLogin from "./UpdateLogin";
+import NearbyWall from "./NearbyWallComponents/NearbyWall";
 
 const rootElement = document.getElementById("root");
 
@@ -16,7 +16,7 @@ render(
 		<Routes>
 			<Route path="/" element={<App />} />
 			<Route path="/home" element={<Home />} />
-			<Route path="/nearby" element={<Nearby />} />
+			<Route path="/nearby" element={<NearbyWall />} />
 			{/* <Route path="/login" element={<UpdateLogin />} /> */}
 			<Route
 				path="*"
