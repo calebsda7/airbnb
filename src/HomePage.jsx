@@ -7,6 +7,7 @@ import Booking from "./BookingComponents/BookingPage";
 import PhotoSlide from "./PhotoSlide";
 import Nearby from "./NearbyPage";
 import FooterPage from "./FooterPage";
+import NearbyUpdate from "./NearbyPageUpdate";
 
 const HomePage = () => {
 	return (
