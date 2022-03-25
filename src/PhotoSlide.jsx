@@ -104,17 +104,6 @@ const PhotoSlide = () => {
 						borderRadius: "10px",
 					}}
 				/>
-				<img
-					src="https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-					alt=""
-					style={{
-						display: "block",
-						height: "100%",
-						margin: "auto",
-						width: "100%",
-						borderRadius: "10px",
-					}}
-				/>
 			</Carousel>
 		</Box>
 	);

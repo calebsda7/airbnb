@@ -9,12 +9,14 @@ const FooterPage = () => {
 
 	return (
 		<Box
+			position="relative"
 			sx={{
 				backgroundColor: "lightblue",
 				marginTop: 10,
+				bottom: 0,
 				paddingBlock: 3,
 				padding: 5,
-				position: "relative",
+				width: "100%",
 			}}
 		>
 			<Grid

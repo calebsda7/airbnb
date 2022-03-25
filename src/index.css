@@ -46,3 +46,7 @@ header {
 	margin-top: 80px;
 	background-color: salmon;
 }
+
+.image-item {
+	padding: 20px 0 20px 20px;
+}

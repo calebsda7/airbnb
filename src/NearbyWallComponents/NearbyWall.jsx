@@ -1,25 +1,59 @@
-import { Container, Grid } from "@mui/material";
-import React from "react";
+import { Container, Grid, Pagination, Stack, Typography } from "@mui/material";
+import React, { useState } from "react";
 import NearbyCard from "./NearbyCard";
 import data from "../nearByData";
-import { useBusiness } from "../hooks/useBuisness";
+import usePagination from "./Pagination";
 
 const NearbyWall = () => {
-	const [buisnesses, amountResults] = useBusiness();
+	let [page, setPage] = useState(1);
+	const PER_PAGE = 12;
+
+	const count = Math.ceil(data.length / PER_PAGE);
+	const _DATA = usePagination(data, PER_PAGE);
+
+	const handleChange = (e, p) => {
+		setPage(p);
+		_DATA.jump(p);
+	};
 
 	return (
-		<Container sx={{ position: "relative", flexGrow: 1 }}>
-			<Grid container spacing={3} direction="row">
-				{data.map((content) => (
-					<Grid item xs={12} md={6} lg={4}>
+		<Container
+			sx={{
+				position: "relative",
+				marginTop: 10,
+				flexGrow: 1,
+			}}
+		>
+			<Grid>
+				<Typography variant="h2" component="div" gutterBottom>
+					Explore More Fun Places
+				</Typography>
+			</Grid>
+			<Grid
+				container
+				spacing={{ xs: 2, md: 3 }}
+				direction="row"
+				justifyContent="center"
+			>
+				{_DATA.currentData().map((content) => (
+					<Grid item xs={12} md={4} lg={4}>
 						<NearbyCard title={content.title} img={content.image} />
 					</Grid>
 				))}
-				{/* {useBusiness.map((content) => (
-					<Grid item xs={12} md={6} lg={4}>
-						<NearbyCard key={content.id} title={content.buisnesses} img={content.image} />
-					</Grid>
-				))} */}
+			</Grid>
+			<Grid
+				container
+				sx={{ justifyContent: "center", marginTop: 10, marginBottom: 7 }}
+			>
+				<Stack spacing={2}>
+					<Pagination
+						count={count}
+						page={page}
+						showFirstButton
+						showLastButton
+						onChange={handleChange}
+					/>
+				</Stack>
 			</Grid>
 		</Container>
 	);

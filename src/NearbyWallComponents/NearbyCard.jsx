@@ -9,13 +9,8 @@ import Typography from "@mui/material/Typography";
 const NearbyCard = (props) => {
 	return (
 		<Card sx={{ maxWidth: 345, borderRadius: 4 }}>
-			<CardMedia
-				component="img"
-				height="200"
-				image={props.img}
-				alt="green iguana"
-			/>
-			<CardContent>
+			<CardMedia component="img" height="200" image={props.img} alt="" />
+			<CardContent sx={{ height: 150 }}>
 				<Typography gutterBottom variant="h5" component="div">
 					{props.title}
 				</Typography>

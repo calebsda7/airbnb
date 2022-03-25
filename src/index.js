@@ -7,6 +7,7 @@ import Home from "./HomePage";
 import Nearby from "./NearbyPage";
 import NavBar from "./NavBar";
 import NearbyWall from "./NearbyWallComponents/NearbyWall";
+import FooterPage from "./FooterPage";
 
 const rootElement = document.getElementById("root");
 
@@ -27,6 +28,7 @@ render(
 				}
 			/>
 		</Routes>
+		<FooterPage />
 	</BrowserRouter>,
 	rootElement
 );

@@ -45,8 +45,8 @@ const NavBar = ({ handleSetModalOpen }) => {
 
 	return (
 		<AppBar
-			position="relative"
-			sx={{ backgroundColor: "white", boxShadow: "none" }}
+			position="fixed"
+			sx={{ backgroundColor: "white", boxShadow: "none", top: 0 }}
 		>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
